@@ -40,6 +40,8 @@ def int_division():
     result=value1/value2
     return '%.2f \n' % result
 
+    //rational numbers
+
 @app.route('/addr')
 def rat_addition():
     value1=request.args.get('A',default = 0, type = str)
