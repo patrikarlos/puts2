@@ -48,7 +48,13 @@ def multiplication():
 def division():
     value1=Rational(request.form['A'])
     value2=Rational(request.form['B'])
-
+    if value1 == 0 and value2 == 0:
+        return "Undefined 0/0\n"
+    elif value2==0 and value1<0:
+        return "-oo\n"
+    elif value2==0 and value1>0:
+        return "oo\n"
+        
     result=float(value1/value2)
     if result.is_integer():
         return str(int(result))+'\n'
