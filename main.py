@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
+    return "Usage:curl -d 'A=val1&B=val2' -X POST http://localhost:5000/<oper>"
 
 
 @app.route('/add',methods=['POST','GET'])
