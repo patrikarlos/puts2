@@ -24,3 +24,9 @@ def test_multiplication():
     r = requests.get(url + '/multiply?A=10&B=20')
     assert r.status_code == 200
     assert r.text == "200 \n"
+
+
+def test_division():
+    r = requests.get(url + '/divide?A=10&B=2')
+    assert r.status_code == 200
+    assert r.text == "5 \n"
