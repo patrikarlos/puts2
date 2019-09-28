@@ -18,3 +18,9 @@ def test_subtraction():
     r = requests.get(url + '/subtract?A=10&B=20')
     assert r.status_code == 200
     assert r.text == "-10 \n"
+
+
+def test_multiplication():
+    r = requests.get(url + '/multiply?A=10&B=20')
+    assert r.status_code == 200
+    assert r.text == "200 \n"
