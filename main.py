@@ -42,6 +42,24 @@ def substraction():
         Z = X-Y
         return str(round(float(Z),3))
         
+@app.route('/mul')
+def multiplication():
+    try:
+        arg1 = request.args.get('A' , default=0, type = Fraction)
+    except ZeroDivisionError:
+        arg1 = 'None'
+    try:
+        arg2 = request.args.get('B' , default=0, type = Fraction)
+    except ZeroDivisionError:
+        arg2 = 'None'
+    if arg1 == 'None' or arg2 == 'None':
+        return 'Error:check the args given above'
+    else:
+        X= Fraction(arg1)
+        Y = Fraction(arg2)
+        Z = X*Y
+        return str(round(float(Z),3))
+        
     
 if __name__ == "__main__":
     app.run(debug=True)
