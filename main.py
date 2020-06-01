@@ -1,4 +1,5 @@
 from flask import Flask, request
+from fractions import Fraction
 
 app = Flask(__name__)
 
@@ -9,9 +10,10 @@ def index():
 
 @app.route('/add')
 def addition():
-    value1=request.args.get('A',default = 0, type = int)
-    value2=request.args.get('B',default = 0, type = int)
-    result=value1+value2
+    value1=request.args.get('A',default = 0, type = Fraction)
+    value2=request.args.get('B',default = 0, type = Fraction)
+    C=value1+value2
+    result= float(c)
     return '%d \n' % result
 
 
