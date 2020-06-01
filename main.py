@@ -5,13 +5,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
+    return 'Usage;\n<Operation>?A=<value1>&B=<value2>\n'
 
 @app.route('/add')
 def addition():
-    Value1=request.args.get('A',default = 0, type = Fraction)
-    Value2=request.args.get('B',default = 0, type = Fraction)
-    data=Value1+Value2
+    value1=request.args.get('A',default = 0, type = Fraction)
+    value2=request.args.get('B',default = 0, type = Fraction)
+    data=value1+value2
     result= float(data)
     return '%d \n' % result
 
