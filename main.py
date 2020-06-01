@@ -24,7 +24,7 @@ def subtraction():
     return '%d \n' % result
 
 @app.route('/multiplication')
-def multiplication()
+def multiplication():
     value1=request.args.get('A',default = 0, type = Fraction)
     value2=request.args.get('B',default = 0, type = Fraction)
     data=value1*value2
