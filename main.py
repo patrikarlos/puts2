@@ -10,8 +10,8 @@ def index():
 
 @app.route('/add')
 def addition():
-    value1=request.args.get('A',default = 0, type = Fraction)
-    value2=request.args.get('B',default = 0, type = Fraction)
+    v1=request.args.get('A',default = 0, type = Fraction)
+    v2=request.args.get('B',default = 0, type = Fraction)
     C=v1+v2
     result= float(C)
     return '%d \n' % result
