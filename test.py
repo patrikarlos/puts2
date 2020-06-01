@@ -11,7 +11,7 @@ add_test=[]
 for i in range (0,len(V1)):
     add_from_test=V1[i] + V2[i]
     add_test.append(round(add_from_test,3))
-    PARAM= {"A":Fraction(value1[i]),"B":Fraction(value2[i])}
+    PARAM= {"A":Fraction(V1[i]),"B":Fraction(V2[i])}
     url_add = 'http://127.0.0.1:5000/add'
     req=request.get(url_add ,params=PARAM)
     data=req.json()
