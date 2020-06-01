@@ -3,17 +3,12 @@ from fractions import Fraction
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return 'Usage;\n<Operation>?A=<V1>&B=<V2>\n'
-
-
 @app.route('/add')
 def addition():
-    v1=request.args.get('A',default = 0, type = Fraction)
-    v2=request.args.get('B',default = 0, type = Fraction)
-    C=v1+v2
-    result= float(C)
+    value1=request.args.get('A',default = 0, type = Fraction)
+    value2=request.args.get('B',default = 0, type = Fraction)
+    data=value1+value2
+    result= float(data)
     return '%d \n' % result
 
 
