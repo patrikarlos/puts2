@@ -1,1 +1,1 @@
-# MINIMUM
+# MEDIAN
