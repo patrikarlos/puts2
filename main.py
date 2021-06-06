@@ -2,18 +2,30 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
+
+@app.route('/add', methods=['GET'])
+def add():
+    d = request.args.get("X")
+
+    l = d.split(",")
+
+    f = []
+    for i in l :
+
+        if i.find('.') == -1 :
+            i = int(i)
+        else :
+            i=  float(i)
+        f.append(i)
+    sum = 0
+
+    for p in f :
+        sum = sum + p
+
+    return str(sum)
 
 
-@app.route('/add')
-def addition():
-    value1=request.args.get('A',default = 0, type = int)
-    value2=request.args.get('B',default = 0, type = int)
-    result=value1+value2
-    return '%d \n' % result
 
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(port = 5000 ,debug=True)
